@@ -1,0 +1,294 @@
+/* ======== VARIÁVEIS CSS (CONSISTÊNCIA COM O MARKETPLACE) ======== */
+:root {
+  --primary-color: #002066; /* Azul escuro principal */
+  --secondary-color: #000e57; /* Azul escuro secundário */
+  --bg-color: #f4f4f9; /* Fundo mais suave para a página de admin */
+  --card-bg-color: #ffffff; /* Fundo dos cards e formulário (branco) */
+  --text-color: #212121; /* Texto escuro */
+  --text-color-light: #ffffff; /* Texto claro */
+  --border-color: #d1d1d1; /* Borda mais clara e suave */
+  --shadow-light: rgba(0, 0, 0, 0.1);
+  --font-stack: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --text-color-description: #5c5c5c; /* Cor para o texto da descrição */
+}
+
+/* ======== RESET E BASE ======== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-stack);
+  background-color: var(--bg-color);
+  margin: 0;
+  padding: 0;
+  color: var(--text-color); /* Texto preto no fundo claro */
+  line-height: 1.6;
+}
+
+/* ======== CABEÇALHO DA PÁGINA DE ADMIN ======== */
+header {
+  background-color: var(--primary-color);
+  color: var(--text-color-light);
+  padding: 1.5rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  color: var(--text-color-light); /* Garante que o h1 seja branco no header */
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.back-to-shop-btn {
+  position: absolute;
+  left: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  transition: color 0.2s ease-in-out;
+}
+
+.back-to-shop-btn:hover {
+  color: #cccccc;
+}
+
+/* ======== CONTEÚDO PRINCIPAL ======== */
+main {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+  color: var(--text-color);
+}
+
+/* ======== CONTÊINER DE DUAS COLUNAS ======== */
+.admin-container {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+h1, h2 {
+  color: var(--secondary-color);
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 0.5rem;
+  margin-top: 0;
+}
+
+/* ======== FORMULÁRIO DE PRODUTOS ======== */
+.product-form {
+  flex: 1;
+  min-width: 300px;
+  background-color: var(--card-bg-color);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#product-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* NOVO: Estilo para agrupar rótulo e input/textarea */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+#product-form label {
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: var(--text-color);
+}
+
+#product-form input {
+  padding: 0.8rem;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  font-size: 1rem;
+  color: var(--text-color);
+}
+
+#product-form textarea {
+  padding: 0.8rem;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  font-size: 1rem;
+  color: var(--text-color);
+  font-family: var(--font-stack);
+  resize: vertical;
+  transition: border-color 0.2s ease-in-out;
+}
+
+#product-form textarea:focus,
+#product-form input:focus {
+  outline: none;
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 2px rgba(0, 14, 87, 0.2);
+}
+
+.form-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+#submit-btn,
+.cancel-btn {
+  flex: 1;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 5px;
+  color: var(--text-color-light);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+#submit-btn {
+  background: var(--secondary-color);
+}
+
+#submit-btn:hover {
+  background: #192a56;
+}
+
+.cancel-btn {
+  background: #778899;
+}
+
+.cancel-btn:hover {
+  background: #5e6d79;
+}
+
+/* ======== LISTA DE PRODUTOS CADASTRADOS ======== */
+.product-list {
+  flex: 2;
+  background-color: var(--card-bg-color);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#product-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+#product-list li {
+  background: var(--card-bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px var(--shadow-light);
+  width: 180px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+  color: var(--text-color);
+}
+
+#product-list li:hover {
+  transform: translateY(-2px);
+}
+
+.product-item img {
+  width: 100%;
+  max-width: 200px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+}
+
+.product-info {
+  flex-grow: 1;
+}
+
+.product-info div {
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+.product-description-admin {
+    font-size: 0.85rem;
+    color: var(--text-color-description);
+    margin: 0.5rem 0;
+    min-height: 35px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.product-actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  width: auto;
+}
+
+.btn-edit,
+.btn-delete {
+  padding: 0.5rem;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  color: var(--text-color-light);
+  border: none;
+  transition: background 0.2s ease-in-out;
+}
+
+.btn-edit {
+  background: var(--secondary-color);
+}
+
+.btn-edit:hover, .btn-edit:focus {
+  background: #192a56;
+}
+
+.btn-delete {
+  background: #d32f2f;
+}
+
+.btn-delete:hover, .btn-delete:focus {
+  background: #b71c1c;
+}
+
+/* ======== RESPONSIVIDADE ======== */
+@media (max-width: 768px) {
+  .admin-container {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  #product-list li {
+    width: 100%;
+  }
+  .form-buttons {
+    flex-direction: column;
+  }
+  .back-to-shop-btn {
+    left: 1rem;
+  }
+}

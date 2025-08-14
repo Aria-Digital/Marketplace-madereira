@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - Administração</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Estilos específicos para a página de login */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+    }
+    
+    .login-container {
+      background-color: var(--card-bg-color);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px var(--shadow-light);
+      text-align: center;
+      max-width: 400px;
+      width: 100%;
+    }
+    
+    .login-container h1 {
+      color: var(--primary-color);
+      margin-bottom: 1.5rem;
+    }
+    
+    .login-container input {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: 1rem;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+    
+    .login-container button {
+      width: 100%;
+      padding: 1rem;
+      background-color: var(--primary-color);
+      color: var(--text-color-light);
+      border: none;
+      border-radius: 50px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.2s ease-in-out;
+    }
+    
+    .login-container button:hover {
+      background-color: var(--secondary-color);
+    }
+    
+    .error-message {
+      color: #e74c3c;
+      margin-top: 1rem;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h1>Login de Administrador</h1>
+    <form id="login-form">
+      <input type="password" id="admin-password" placeholder="Digite a senha" required />
+      <button type="submit">Entrar</button>
+      <p id="error-message" class="error-message">Senha incorreta!</p>
+    </form>
+  </div>
+
+  <script src="login.js"></script>
+</body>
+</html>
