@@ -209,10 +209,10 @@ h1, h2 {
   transform: translateY(-2px);
 }
 
+/* Alteração: Tamanho da imagem padronizado para 100px por 100px */
 .product-item img {
-  width: 100%;
-  max-width: 200px;
-  height: 100px;
+  width: 100px; /* Largura padrão */
+  height: 100px; /* Altura padrão */
   object-fit: cover;
   border-radius: 6px;
   margin-bottom: 0.5rem;
