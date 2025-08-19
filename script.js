@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const sendToWhatsApp = () => {
-        const phone = '55XX9XXXXXXXX';
+        const phone = '5587999580348';
         const message = Object.values(cart).map(item =>
             `- ${item.name}\nQuantidade: ${item.quantity}\nSubtotal: ${formatBRL(item.price * item.quantity)}`
         ).join('\n\n') + `\n\nTotal: ${els.totalDisplay.textContent}`;
